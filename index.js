@@ -7,6 +7,7 @@ const express = require("express");
 // const cp = require('child_process');
 const ngrok = require("ngrok");
 const axios = require("axios");
+const { json } = require("express");
 require("dotenv").config();
 
 // create LINE SDK config from env variables
@@ -111,6 +112,10 @@ function handleEvent(event) {
       if (data === "DATE" || data === "TIME" || data === "DATETIME") {
         data += `(${JSON.stringify(event.postback.params)})`;
       }
+      const jsonData = JSON.parse(data);
+      if (jsonData["type"] == "quiz") {
+        return replyText(event.replyToken, "クイズを始めます。");
+      }
       return replyText(event.replyToken, `Got postback: ${data}`);
 
     case "beacon":
@@ -125,6 +130,26 @@ function handleText(message, replyToken, source) {
   const buttonsImageURL = `${baseURL}/static/buttons/1040.jpg`;
 
   switch (message.text) {
+    case "init":
+      return client.replyMessage(replyToken, {
+        type: "template",
+        altText: "Buttons alt text",
+        template: {
+          type: "buttons",
+          thumbnailImageUrl:
+            "https://cdn.hinatazaka46.com/images/14/82f/b294ff812792aac4abb9fc4dc91ba.jpg",
+          title: "日向坂46クイズ",
+          text: "日向坂46の知識を試そう！",
+          actions: [
+            {
+              label: "クイズ",
+              type: "postback",
+              data: '{"type":"quiz"}',
+              text: "クイズ",
+            },
+          ],
+        },
+      });
     case "profile":
       if (source.userId) {
         return client
@@ -342,8 +367,8 @@ function handleText(message, replyToken, source) {
           );
       }
     default:
-      console.log(`Echo message to ${replyToken}: ${message.text}`);
-      return replyText(replyToken, message.text);
+    // console.log(`Echo message to ${replyToken}: ${message.text}`);
+    // return replyText(replyToken, message.text);
   }
 }
 
