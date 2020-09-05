@@ -1,0 +1,67 @@
+[
+  {
+    "thumbnailImageUrl": "https://cdn.hinatazaka46.com/images/14/9ff/c742fa039c222dd3fe1a7c0469823/400_1440_102400.jpg",
+    "title": "日向坂クイズ",
+    "text": "日向坂46のメンバーで一番足が速いのは？",
+    "type": "quiz",
+    "choices": [
+      {
+        "text": "小坂奈緒",
+        "data": {
+          "isCorrect": false
+        }
+      },
+      {
+        "text": "齊藤京子",
+        "data": {
+          "isCorrect": false
+        }
+      },
+      {
+        "text": "加藤史帆",
+        "data": {
+          "isCorrect": true,
+          "description": "欅坂46vsけやき坂46 秋の大運動会より"
+        }
+      },
+      {
+        "text": "東村芽依",
+        "data": {
+          "isCorrect": false
+        }
+      }
+    ]
+  },
+  {
+    "thumbnailImageUrl": "https://cdn.hinatazaka46.com/files/14/hinata/pages/2nd_single_sp/img/movie_thumb_doremi.jpg",
+    "title": "日向坂クイズ",
+    "text": "日向坂46の2ndシングル「ドレミソラシド」のセンターを務めたのは誰でしょう？",
+    "type": "quiz",
+    "choices": [
+      {
+        "text": "小坂奈緒",
+        "data": {
+          "isCorrect": true
+        }
+      },
+      {
+        "text": "齊藤京子",
+        "data": {
+          "isCorrect": false
+        }
+      },
+      {
+        "text": "加藤史帆",
+        "data": {
+          "isCorrect": false
+        }
+      },
+      {
+        "text": "佐々木美玲",
+        "data": {
+          "isCorrect": false
+        }
+      }
+    ]
+  }
+]

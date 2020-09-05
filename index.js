@@ -8,6 +8,12 @@ const express = require("express");
 const ngrok = require("ngrok");
 const axios = require("axios");
 const { json } = require("express");
+const {
+  pushInitMessage,
+  pushQuiz,
+  pushCorrectMessage,
+} = require("./pushMessage");
+const { returnQuizDataJson } = require("./returnQuizDataJson");
 require("dotenv").config();
 
 // create LINE SDK config from env variables
@@ -77,7 +83,7 @@ function handleEvent(event) {
           return handleText(message, event.replyToken, event.source);
         case "image":
           return replyText(event.replyToken, "画像には反応できんよー");
-          return handleImage(message, event.replyToken);
+        // return handleImage(message, event.replyToken);
         case "video":
           return replyText(event.replyToken, "動画には反応できんよー");
         // return handleVideo(message, event.replyToken);
@@ -96,12 +102,14 @@ function handleEvent(event) {
       }
 
     case "follow":
-      return replyText(event.replyToken, "フォローサンキュー！");
+      replyText(event.replyToken, "フォローサンキュー！");
+      return pushQuiz(event.replyToken);
 
     case "unfollow":
       return console.log(`Unfollowed this bot: ${JSON.stringify(event)}`);
 
     case "join":
+      replyText(event.replyToken, "ご招待ありがとうございます。");
       return replyText(event.replyToken, `Joined ${event.source.type}`);
 
     case "leave":
@@ -109,12 +117,20 @@ function handleEvent(event) {
 
     case "postback":
       let data = event.postback.data;
-      if (data === "DATE" || data === "TIME" || data === "DATETIME") {
-        data += `(${JSON.stringify(event.postback.params)})`;
-      }
-      const jsonData = JSON.parse(data);
-      if (jsonData["type"] == "quiz") {
-        return replyText(event.replyToken, "クイズを始めます。");
+      data = JSON.parse(data);
+      switch (data.type) {
+        case "quiz_init":
+          return pushQuiz(event.replyToken);
+        case "quiz":
+          if (data.isCorrect == true) {
+            replyText(event.replyToken, "正解！");
+            // pushCorrectMessage(event.replyToken);
+          } else if (data.isCorrect == false) {
+            replyText(event.replyToken, "不正解！");
+          } else {
+            replyText(event.replyToken, "エラー");
+          }
+          return pushQuiz(event.replyToken);
       }
       return replyText(event.replyToken, `Got postback: ${data}`);
 
@@ -130,26 +146,8 @@ function handleText(message, replyToken, source) {
   const buttonsImageURL = `${baseURL}/static/buttons/1040.jpg`;
 
   switch (message.text) {
-    case "init":
-      return client.replyMessage(replyToken, {
-        type: "template",
-        altText: "Buttons alt text",
-        template: {
-          type: "buttons",
-          thumbnailImageUrl:
-            "https://cdn.hinatazaka46.com/images/14/82f/b294ff812792aac4abb9fc4dc91ba.jpg",
-          title: "日向坂46クイズ",
-          text: "日向坂46の知識を試そう！",
-          actions: [
-            {
-              label: "クイズ",
-              type: "postback",
-              data: '{"type":"quiz"}',
-              text: "クイズ",
-            },
-          ],
-        },
-      });
+    case "quiz":
+      return pushInitMessage(replyToken);
     case "profile":
       if (source.userId) {
         return client

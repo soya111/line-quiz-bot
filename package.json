@@ -11,6 +11,18 @@
     "axios": "^0.20.0",
     "dotenv": "^8.2.0",
     "express": "^4.17.1",
+    "fs": "0.0.1-security",
     "ngrok": "^3.2.7"
-  }
+  },
+  "devDependencies": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/soya111/line-quiz-bot.git"
+  },
+  "author": "soya111",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/soya111/line-quiz-bot/issues"
+  },
+  "homepage": "https://github.com/soya111/line-quiz-bot#readme"
 }
