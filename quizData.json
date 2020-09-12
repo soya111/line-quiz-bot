@@ -3,7 +3,7 @@
     "thumbnailImageUrl": "https://cdn.hinatazaka46.com/images/14/9ff/c742fa039c222dd3fe1a7c0469823/400_1440_102400.jpg",
     "title": "日向坂クイズ",
     "text": "日向坂46のメンバーで一番足が速いのは？",
-    "type": "quiz",
+    "type": "quiz_answer",
     "choices": [
       {
         "text": "小坂奈緒",
@@ -36,7 +36,7 @@
     "thumbnailImageUrl": "https://cdn.hinatazaka46.com/files/14/hinata/pages/2nd_single_sp/img/movie_thumb_doremi.jpg",
     "title": "日向坂クイズ",
     "text": "日向坂46の2ndシングル「ドレミソラシド」のセンターを務めたのは誰でしょう？",
-    "type": "quiz",
+    "type": "quiz_answer",
     "choices": [
       {
         "text": "小坂奈緒",

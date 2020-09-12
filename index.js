@@ -12,7 +12,8 @@ const {
   pushInitMessage,
   pushQuiz,
   pushCorrectMessage,
-} = require("./pushMessage");
+  pushIncorrectMessage
+} = require("./createMessage");
 const { returnQuizDataJson } = require("./returnQuizDataJson");
 require("dotenv").config();
 
@@ -102,35 +103,26 @@ function handleEvent(event) {
       }
 
     case "follow":
-      replyText(event.replyToken, "フォローサンキュー！");
-      return pushQuiz(event.replyToken);
+      return replyText(event.replyToken, ["フォローサンキュー！"]);
+    // return pushQuiz(event.replyToken);
 
     case "unfollow":
       return console.log(`Unfollowed this bot: ${JSON.stringify(event)}`);
 
     case "join":
-      replyText(event.replyToken, "ご招待ありがとうございます。");
-      return replyText(event.replyToken, `Joined ${event.source.type}`);
+      replyText(event.replyToken, `ご招待ありがとうございます。\nJoined ${event.source.type}`);
 
     case "leave":
-      return console.log(`Left: ${JSON.stringify(event)}`);
+      return console.log(`I'll be back\nLeft: ${JSON.stringify(event)}`);
 
     case "postback":
       let data = event.postback.data;
       data = JSON.parse(data);
       switch (data.type) {
-        case "quiz_init":
+        case "push_quiz":
           return pushQuiz(event.replyToken);
-        case "quiz":
-          if (data.isCorrect == true) {
-            replyText(event.replyToken, "正解！");
-            // pushCorrectMessage(event.replyToken);
-          } else if (data.isCorrect == false) {
-            replyText(event.replyToken, "不正解！");
-          } else {
-            replyText(event.replyToken, "エラー");
-          }
-          return pushQuiz(event.replyToken);
+        case "quiz_answer":
+          return data.isCorrect ? pushCorrectMessage(event.replyToken) : pushIncorrectMessage(event.replyToken);
       }
       return replyText(event.replyToken, `Got postback: ${data}`);
 
@@ -146,7 +138,7 @@ function handleText(message, replyToken, source) {
   const buttonsImageURL = `${baseURL}/static/buttons/1040.jpg`;
 
   switch (message.text) {
-    case "quiz":
+    case "クイズスタート":
       return pushInitMessage(replyToken);
     case "profile":
       if (source.userId) {
