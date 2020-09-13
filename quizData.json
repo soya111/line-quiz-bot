@@ -159,5 +159,69 @@
         }
       }
     ]
+  },
+  {
+    "thumbnailImageUrl": "https://cdn-ak.f.st-hatena.com/images/fotolife/y/yoppy-ichinichi/20190919/20190919091723.png",
+    "title": "日向坂クイズ",
+    "text": "次のメンバーのうち、ソロ曲を歌っていない誰でしょう？",
+    "type": "quiz_answer",
+    "choices": [
+      {
+        "text": "小坂奈緒",
+        "data": {
+          "isCorrect": true
+        }
+      },
+      {
+        "text": "上村ひなの",
+        "data": {
+          "isCorrect": false
+        }
+      },
+      {
+        "text": "加藤史帆",
+        "data": {
+          "isCorrect": false
+        }
+      },
+      {
+        "text": "佐々木美玲",
+        "data": {
+          "isCorrect": false
+        }
+      }
+    ]
+  },
+  {
+    "thumbnailImageUrl": "https://ogre.natalie.mu/media/news/music/2018/0302/sakamichiAKB_201803MV01.jpg?impolicy=lt&imwidth=1200",
+    "title": "日向坂クイズ",
+    "text": "次のメンバーのうち、坂道AKBの楽曲「国境のない時代」に参加しているのは誰？",
+    "type": "quiz_answer",
+    "choices": [
+      {
+        "text": "小坂奈緒",
+        "data": {
+          "isCorrect": false
+        }
+      },
+      {
+        "text": "齊藤京子",
+        "data": {
+          "isCorrect": false
+        }
+      },
+      {
+        "text": "加藤史帆",
+        "data": {
+          "isCorrect": true
+        }
+      },
+      {
+        "text": "佐々木美玲",
+        "data": {
+          "isCorrect": false
+        }
+      }
+    ]
   }
 ]
