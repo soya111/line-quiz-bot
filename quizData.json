@@ -65,7 +65,7 @@
     ]
   },
   {
-    "thumbnailImageUrl": "hhttps://i0.wp.com/erimakee.com/wp-content/uploads/2019/08/aJT11KfmuNar4UZ-XHG2WQ4yQOkRAKSYpCgnHMXmLto.jpg?fit=700%2C467",
+    "thumbnailImageUrl": "https://i0.wp.com/erimakee.com/wp-content/uploads/2019/08/aJT11KfmuNar4UZ-XHG2WQ4yQOkRAKSYpCgnHMXmLto.jpg?fit=700%2C467",
     "title": "日向坂クイズ",
     "text": "日向坂46の最年長メンバーは誰でしょう？",
     "type": "quiz_answer",
@@ -92,38 +92,6 @@
         "text": "佐々木久美",
         "data": {
           "isCorrect": true
-        }
-      }
-    ]
-  },
-  {
-    "thumbnailImageUrl": "https://cdn.hinatazaka46.com/files/14/hinata/pages/2nd_single_sp/img/movie_thumb_doremi.jpg",
-    "title": "日向坂クイズ",
-    "text": "日向坂46の2ndシングル「ドレミソラシド」のセンターを務めたのは誰でしょう？",
-    "type": "quiz_answer",
-    "choices": [
-      {
-        "text": "小坂奈緒",
-        "data": {
-          "isCorrect": true
-        }
-      },
-      {
-        "text": "齊藤京子",
-        "data": {
-          "isCorrect": false
-        }
-      },
-      {
-        "text": "加藤史帆",
-        "data": {
-          "isCorrect": false
-        }
-      },
-      {
-        "text": "佐々木美玲",
-        "data": {
-          "isCorrect": false
         }
       }
     ]
