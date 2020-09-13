@@ -95,5 +95,69 @@
         }
       }
     ]
+  },
+  {
+    "thumbnailImageUrl": "https://48pedia.org/images/thumb/c/c6/%E3%82%AD%E3%83%A5%E3%83%B3_%E9%85%8D%E4%BF%A1%E9%99%90%E5%AE%9A%E7%9B%A4.png/1200px-%E3%82%AD%E3%83%A5%E3%83%B3_%E9%85%8D%E4%BF%A1%E9%99%90%E5%AE%9A%E7%9B%A4.png",
+    "title": "日向坂クイズ",
+    "text": "日向坂46の1stシングル「キュン」のセンターを務めたのは誰でしょう？",
+    "type": "quiz_answer",
+    "choices": [
+      {
+        "text": "小坂奈緒",
+        "data": {
+          "isCorrect": true
+        }
+      },
+      {
+        "text": "齊藤京子",
+        "data": {
+          "isCorrect": false
+        }
+      },
+      {
+        "text": "加藤史帆",
+        "data": {
+          "isCorrect": false
+        }
+      },
+      {
+        "text": "佐々木美玲",
+        "data": {
+          "isCorrect": false
+        }
+      }
+    ]
+  },
+  {
+    "thumbnailImageUrl": "https://amd.c.yimg.jp/im_siggWYo.._eIY26DYgtYJtJtpA---x640-y427-q90-exp3h-pril/amd/20200621-00636609-shincho-000-2-view.jpg",
+    "title": "日向坂クイズ",
+    "text": "日向坂46に所属しているメンバーは何人でしょう？",
+    "type": "quiz_answer",
+    "choices": [
+      {
+        "text": "18人",
+        "data": {
+          "isCorrect": false
+        }
+      },
+      {
+        "text": "20人",
+        "data": {
+          "isCorrect": false
+        }
+      },
+      {
+        "text": "22人",
+        "data": {
+          "isCorrect": true
+        }
+      },
+      {
+        "text": "24人",
+        "data": {
+          "isCorrect": false
+        }
+      }
+    ]
   }
 ]
