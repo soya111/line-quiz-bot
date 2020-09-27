@@ -83,7 +83,7 @@ function handleEvent(event) {
         case "text":
           return handleText(message, event.replyToken, event.source);
         case "image":
-          return replyText(event.replyToken, "画像には反応できんよー");
+        // return replyText(event.replyToken, "画像には反応できんよー");
         // return handleImage(message, event.replyToken);
         case "video":
           return replyText(event.replyToken, "動画には反応できんよー");
@@ -95,8 +95,8 @@ function handleEvent(event) {
           // return handleLocation(message, event.replyToken);
           return replyText(event.replyToken, "位置情報には反応できんよー");
         case "sticker":
-          // return handleSticker(message, event.replyToken);
-          return replyText(event.replyToken, "スタンプには反応できんよー");
+        // return handleSticker(message, event.replyToken);
+        // return replyText(event.replyToken, "スタンプには反応できんよー");
 
         default:
           throw new Error(`Unknown message: ${JSON.stringify(message)}`);
